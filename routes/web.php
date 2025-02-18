@@ -1,18 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| Di sini Anda dapat mendaftarkan rute web untuk aplikasi Anda. 
+| Rute-rute ini dimuat oleh RouteServiceProvider dan semuanya akan 
+| ditempatkan dalam grup middleware "web". Buat sesuatu yang hebat!
 |
 */
 
+// Rute default untuk halaman utama
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); // Mengembalikan tampilan 'welcome'
 });
+
+// Rute resource untuk ItemController, otomatis menangani CRUD
+Route::resource('items', ItemController::class);
