@@ -28,7 +28,7 @@ Route::get('/', function () {
 // Rute resource untuk ItemController, otomatis menangani CRUD
 Route::resource('items', ItemController::class);
 
-Route::get('/hello', [WelcomeController::class,'hello']);
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
 
 Route::get('/world', function () 
         { return 'World';
@@ -52,5 +52,8 @@ Route::get('/user/{name?}', function ($name='John') { return 'Nama saya '.$name;
 
 
 Route::resource('photos', PhotoController::class);
+
+
+    
 
     
